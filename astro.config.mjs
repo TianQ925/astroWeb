@@ -7,7 +7,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://tianq925.github.io',
+  site: 'https://tianq925.github.io/astroWeb',
   base: '/astroWeb/',
   integrations: [mdx(), svelte()],
   markdown: {
