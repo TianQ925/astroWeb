@@ -3,7 +3,6 @@ title: 评论区测试
 publishDate: 01 Dec 2021
 ---
 Test Page
-[Hello World](/astroWeb/blog/hello-world)
 
 <script src="https://giscus.app/client.js"
         data-repo="TianQ925/astroWeb"
