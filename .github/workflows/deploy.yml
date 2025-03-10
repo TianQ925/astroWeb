@@ -1,4 +1,4 @@
-name: Deploy Astro to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
-        with:
-          show-progress: false
 
       - name: 设置 Node.js 环境
         uses: actions/setup-node@v3
@@ -25,13 +23,16 @@ jobs:
           node-version: '18.15.0'
           cache: 'npm'
 
-      - name: 安装依赖并构建 Astro 项目
+      - name: 安装依赖并构建项目
         run: |
           npm ci
           npm run build
 
+      - name: 调整构建产物权限
+        run: chmod -R a+rX ./dist
+
       - name: 上传构建产物
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: ./dist
