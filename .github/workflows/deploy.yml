@@ -24,7 +24,7 @@ jobs:
       - name: 设置 Node.js 环境
         uses: actions/setup-node@v3
         with:
-          node-version: '18.4.1'
+          node-version: '18.15.0'
           cache: 'npm'
 
       - name: 安装依赖并构建 Astro 项目
