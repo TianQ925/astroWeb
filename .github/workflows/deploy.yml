@@ -22,6 +22,7 @@ jobs:
         with:
           node-version: '18.15.0'
           cache: 'npm'
+          cache-key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: 安装依赖并构建项目
         run: |
