@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master  # 或您的默认分支名称
+      
+permissions:
+  contents: write
+  pages: write
 
 jobs:
   build:
