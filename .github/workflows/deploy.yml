@@ -1,10 +1,8 @@
 name: Deploy Astro to GitHub Pages
 
 on:
-  # 当推送到 main 分支时触发工作流
   push:
     branches: [master]
-  # 允许您从 GitHub 的 Actions 标签手动运行此工作流
   workflow_dispatch:
 
 permissions:
@@ -32,15 +30,14 @@ jobs:
           npm ci
           npm run build
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
         with:
           name: build-artifact
           path: ./dist
 
-      - name: List build directory contents
+      - name: 列出构建目录内容
         run: ls -la ./dist
-
 
   deploy:
     runs-on: ubuntu-latest
